@@ -1,0 +1,90 @@
+<section class="login-section">
+  <h3>Sign In</h3>
+  <form action="/admin" method="POST">
+    <label for="username">Username</label>
+    <input
+      type="text"
+      id="username"
+      placeholder="Enter username"
+      name="username"
+    />
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter Password"
+      name="password"
+    />
+
+    <div class="btn-container">
+      <input type="submit" value="Login" class="btn" />
+      <% if (content.showRegisterForm) { %>
+      <span>
+        Don't have an account?
+        <a href="#" class="register-section-btn">Register</a>
+      </span>
+      <% } %>
+    </div>
+  </form>
+</section>
+
+<% if (content.showRegisterForm) { %>
+<section class="register-section hidden">
+  <h3>Register</h3>
+  <form action="/admin/register" method="POST">
+    <label for="fullname">Your full name</label>
+    <input
+      type="text"
+      id="fullname"
+      placeholder="Enter your full name"
+      name="fullname"
+      required
+    />
+
+    <label for="email">Your Email</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="Enter your email"
+      name="email"
+      required
+    />
+
+    <label for="username">Username</label>
+    <input
+      type="text"
+      id="username"
+      placeholder="Enter username"
+      name="username"
+      required
+    />
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter Password"
+      name="password"
+      required
+    />
+
+    <label for="confirm-password">Confirm Password</label>
+    <input
+      type="password"
+      id="confirm-password"
+      placeholder="Confirm Password"
+      name="password_confirm"
+      required
+    />
+
+    <div class="btn-container">
+      <input type="submit" value="Register" class="btn" />
+      <span>
+        Already have an account?
+        <a href="#" class="login-section-btn">Login</a>
+      </span>
+    </div>
+  </form>
+</section>
+<% } %>
